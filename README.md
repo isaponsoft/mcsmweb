@@ -41,7 +41,7 @@ The functions are implemented to a minimum and the interface is made as easy to 
 |World backup(dynamic)|not available|
 |Multi world management|OK|
 |Realtime server console|OK|
-|Vanilla server download|not available|
+|Vanilla server download|OK|
 |spigot server auto build|OK|
 |Plugin manager|not available|
 
