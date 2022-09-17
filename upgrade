@@ -1,0 +1,4 @@
+#!/bin/sh
+bin=$(readlink -fn $(realpath $0))
+thispath=$(dirname $bin)
+cd ${thispath} && git pull && node dist/migrate.js $*

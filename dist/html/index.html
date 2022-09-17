@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="main.css"></link>
+</head>
+<body>
+<div id="containor" style="display: none;">
+	<div id="header" style="vertical-align: middle;">
+		<div id="language-box" style="float: left;">
+			<a id="language-menu">LANG</a>
+			<ul id="language-list">
+<!--
+				<li class="language-item">English(US)</li>
+				<li class="language-item">日本語</li>
+-->
+			</ul>
+		</div>
+		<div>
+			<a href="https://github.com/isaponsoft/mcsm/"><img src="header.png" /></a>
+		</div>
+	</div>
+	<div id="main">
+		<div id="sidebar">
+			<div>
+				<ul class="toggle">
+					<li class="fixed"><div class="arrow-box"><div class="arrow arrow-open arrow-white"></div></div><div class="contents-header-title">WORLD</div></li>
+				</ul>
+				<ul id="world-list" class="toggle-contents">
+					<li id="world-create" class="translated menu-button">MENU/WORLD-CREATE</li>
+				</ul>
+			</div>
+
+			<div>
+				<ul class="toggle">
+					<li class="fixed"><div class="arrow-box"><div class="arrow arrow-open arrow-white"></div></div><div class="contents-header-title">PROGRAM</div></li>
+				</ul>
+				<ul id="program-list" class="toggle-contents">
+					<li id="program-update" class="translated menu-button">MENU/PROGRAM-UPDATE</li>
+				</ul>
+			</div>
+
+			<div>
+				<ul class="toggle">
+					<li class="translated fixed"><div class="arrow-box arrow-white"><div class="arrow arrow-open "></div></div><div class="contents-header-title">BACKUP</div></li>
+				</ul>
+				<ul id="backup-list" class="toggle-contents">
+					<li id="backup-upload" class="translated menu-button">MENU/BACKUP-UPLOAD</li>
+				</ul>
+			</div>
+
+		</div>
+		<div id="contents">
+			<div id="content-console">
+				<div class="contents-wrapper">
+					<div class="contents-header toggle"><div class="arrow-box"><div class="arrow arrow-open arrow-black"></div></div><div class="contents-header-title">CONSOLE</div></div>
+					<div class="contents-main toggle-contents">
+						<div class="console-wrapper">
+							<div id="console-box"></div>
+							<div id="console-input-box">&nbsp;<label id="console-prompt"></label>&gt;&nbsp;<input type="text" name="message" id="console-message" /></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="content-world" style="display: block;">
+				<div class="contents-wrapper" id="world-status" style="display: none;">
+					<div class="contents-header toggle"><div class="arrow-box"><div class="arrow-destroy"></div></div><div class="arrow-box"><div class="arrow arrow-open arrow-black"></div></div><div class="contents-header-title">WORLD</div></div>
+					<div class="contents-main toggle-contents">
+						<table class="status-list">
+							<tr><td class="status-header">DESCRIPTION</td><td id="world-status-motd"></td></tr>
+							<tr><td class="status-header">DIRECTORY</td><td id="world-status-dir"></td></tr>
+							<tr><td class="status-header">PROGRAM</td><td id="world-status-program"></td></tr>
+							<tr><td class="status-header">STATUS</td><td id="world-status-status"></td></tr>
+							<tr><td class="status-header">PORT</td><td id="world-status-port"></td></tr>
+							<tr><td class="status-header">WARNNINGS</td><td id="world-status-warnings"></td></tr>
+							<tr><td class="status-header">PLAYERS</td>
+								<td>
+								<div class="toggle"><div class="arrow-box"><div class="arrow arrow-open"></div></div><div id="world-status-players">/</div></div>
+								<table class="login-players toggle-contents"><tbody id="world-status-login"></tbody></table>
+								</td>
+							</tr>
+						</table>
+						<button id="btn-run" class="translated mc-button">DIALOG/WORLDSTATUS/RUN-BUTTON</button>
+						<button id="btn-setting" class="translated mc-button">DIALOG/WORLDSTATUS/SETTING-BUTTON</button>
+						<button id="btn-prop" class="translated mc-button">DIALOG/WORLDSTATUS/PROPERTIE-BUTTON</button>
+						<button id="btn-stop" class="translated mc-button">DIALOG/WORLDSTATUS/STOP-BUTTON</button>
+						<button id="btn-eula" class="translated mc-button">DIALOG/WORLDSTATUS/EULA-BUTTON</button>
+						<button id="btn-world-backup" class="translated mc-button">DIALOG/WORLDSTATUS/BACKUP-BUTTON</button>
+						<button id="btn-world-delete" class="translated mc-button">DIALOG/WORLDSTATUS/DELETE-BUTTON</button>
+					</div>
+				</div>
+			</div>
+
+			<div id="content-program" style="display: none;">
+				<div class="contents-wrapper" id="program-status">
+					<div class="contents-header toggle"><div class="arrow-box"><div class="arrow-destroy"></div></div><div class="arrow-box"><div class="arrow arrow-open arrow-black"></div></div><div class="contents-header-title">PROGRAM</div></div>
+					<div class="contents-main toggle-contents">
+						<table class="status-list">
+							<tr><td class="status-header">DIRECTORY</td><td id="program-status-dir"></td></tr>
+							<tr><td class="status-header">PROGRAM</td><td id="program-status-jar"></td></tr>
+							<tr><td class="status-header">TYPE</td><td id="program-status-type"></td></tr>
+							<tr><td class="status-header">VERSION</td><td id="program-status-version"></td></tr>
+							<tr><td class="status-header">STATUS</td><td id="program-status-status"></td></tr>
+						</table>
+						<button id="btn-delete" class="translated mc-button">DIALOG/PROGRAMSTATUS/DELETE-BUTTON</button>
+					</div>
+				</div>
+			</div>
+
+			<div id="content-backup" style="display: none;">
+				<div class="contents-wrapper" id="backup-status">
+					<div class="contents-header toggle"><div class="arrow-box"><div class="arrow-destroy"></div></div><div class="arrow-box"><div class="arrow arrow-open arrow-black"></div></div><div class="contents-header-title">BACKUP</div></div>
+					<div class="contents-main toggle-contents">
+						<table class="status-list">
+							<thead><tr><th class="backup-time">Date</th><th class="backup-state">Satte</th><th class="backup-controll" colspan="3">Controll</th></tr></thead>
+							<tbody class="backup-list">
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div id="footer">
+		<a target="_blank" href="https://twitter.com/isaponsoft/"><img class="social-icon" src="icon-twitter.png" /></a>
+		<a target="_blank" href="https://github.com/isaponsoft/mcsmweb/"><img class="social-icon" src="icon-github.png" /></a>
+		<div>MINECRAFT SERVER MANAGER - COPYRIGHT 2022 ISAPONSOFT</div>
+	</div>
+</div>
+<!--***********************************************************************-->
+<template id="tmpl-world-selector">
+<li class="world-selector"></li>
+</template>
+<template id="tmpl-program-selector">
+<li class="program-selector"></li>
+</template>
+<!--***********************************************************************-->
+<template id="tmpl-prop-editor">
+<tr class="element-edit">
+<td class="prop-name"></td>
+<td><input class="prop-value" type="text" name="" value="" />
+</td>
+</tr>
+</template>
+<!--***********************************************************************-->
+<template id="tmpl-setting-editor">
+<tr class="element-edit">
+<td class="prop-name"></td>
+<td><input class="prop-value" type="text" name="" value="" />
+<p class="setting-comment"><label class="translated">TEMP/SETTING/EDITOR/MESSAGE</label>:<label class="setting-default"></label></p>
+</td>
+</tr>
+</template>
+<!--***********************************************************************-->
+<template id="tmpl-login-player">
+<tr class="login-player">
+	<td><div class="skinbox"><img class="skin" src="" /></div></td>
+	<td class="name" style="vertical-align: middle;"></td>
+<!--<td><label class="small-btn player-kick" data-uid="">KICK</label><label class="small-btn player-ban" data-uid="">BAN</label></td>-->
+</tr>
+</template>
+<!--***********************************************************************-->
+<template id="tmpl-program-selector">
+<li class="program-selector"></li>
+</template>
+<!--***********************************************************************-->
+<template id="tmpl-backup-selector">
+<li class="backup-selector"></li>
+</template>
+<!--***********************************************************************-->
+<template id="tmpl-backup-item">
+<tr class="backup-selector">
+	<td class="backup-time"></td>
+	<td class="backup-state">OK</td>
+	<td class="button-restore mc-button translated" style="width: 5em">BACKUP/MENU/RESTORE</td>
+	<td class="mc-button" style="width: 5em"><a class="button-download translated" download="" href="">BACKUP/MENU/DOWNLOAD</a></td>
+	<td class="button-delete mc-button translated" style="width: 5em">BACKUP/MENU/DELETE</td>
+</tr>
+</template>
+<!--***********************************************************************-->
+<template id="tmpl-backup-item-no-ok">
+<tr class="backup-selector">
+	<td class="backup-time"></td>
+	<td class="backup-state">NO</td>
+	<td class="backup-msg" colspan="2"></td>
+	<td class="button-delete mc-button translated" style="width: 5em">BACKUP/MENU/DELETE</td>
+</tr>
+</template>
+<!--***********************************************************************-->
+<dialog id="dialog-world-create">
+<div>
+	<form method="dialog">
+	<div class="input-element">
+		<div class="translated input-label">DIALOG/WORLD-CREATE/WORLDID</div>
+		<div><input type="text" name="id" /></div>
+	</div>
+	<div class="input-element">
+		<div class="translated input-label">DIALOG/WORLD-CREATE/DESC</div>
+		<div><input type="text" name="pro:motd" value="A Minecraft server by mcsmnj"/></div>
+	</div>
+	<div class="input-element">
+		<div class="translated input-label">DIALOG/WORLD-CREATE/PORT</div>
+		<div><input type="text" name="pro:server-port" value="25565" /></div>
+	</div>
+	<div class="input-element">
+		<div class="translated input-label">DIALOG/WORLD-CREATE/SEED</div>
+		<div><input type="text" name="pro:level-seed" value="" /></div>
+	</div>
+	<div class="input-element">
+		<div class="translated input-label">DIALOG/WORLD-CREATE/PROGRAMTYPE</div>
+		<div>
+			<select name="ini:program-type">
+				<option value="spigot" selected>spigot</option>
+				<option value="vanilla">vanilla</option>
+			</select>
+		</div>
+	</div>
+	<div class="input-element">
+		<div class="translated input-label">DIALOG/WORLD-CREATE/PROGRAMVER</div>
+		<div><input type="text" name="ini:program-ver" value="" /></div>
+	</div>
+	<button id="btn-world-create" class="button-play translated">DIALOG/WORLD-CREATE/BTN-CREATE</button>
+	<button class="translated" value="cancel">DIALOG/WORLD-CREATE/BTN-CANCEL</button>
+	</form>
+</div>
+</dialog>
+<!--***********************************************************************-->
+<dialog id="dialog-yesno">
+<div>
+	<form method="dialog">
+	<div class="dialog-message">meg</div>
+	<button id="btn-yesno-yes" class="mc-button">yes</button>
+	<button id="btn-yesno-no" class="mc-button">no</button>
+	</form>
+</div>
+</dialog>
+<!--***********************************************************************-->
+<dialog id="dialog-login">
+<div>
+	<form method="dialog">
+	<div class="dialog-header translated">DIALOG/LOGIN/TITLE</div>
+	<div class="translated">DIALOG/LOGIN/MESSAGE</div>
+	<div class="input-element">
+		<div class="translated input-label">DIALOG/LOGIN/USERNAME</div>
+		<div><input type="text" name="user" /></div>
+	</div>
+	<div class="input-element">
+		<div class="translated input-label">DIALOG/LOGIN/PASSWORD</div>
+		<div><input type="password" name="pass" /></div>
+	</div>
+	<button id="btn-login" class="translated mc-button">DIALOG/LOGIN/LOGIN-BUTTON</button>
+	</form>
+</div>
+</dialog>
+<!--***********************************************************************-->
+<dialog id="dialog-edit">
+<div>
+	<form method="dialog">
+	<div class="dialog-header translated">DIALOG/EDIT/TITLE</div>
+	<table class="prop-editor">
+		<thead>
+			<tr><th>name</th><th>value</th></tr>
+		</thead>
+		<tbody class="input-frame">
+		</tbody>
+	</table>
+	<button id="btn-prop-save" class="translated mc-button">DIALOG/EDIT/EDIT-SAVE-BUTTON</button>
+	<button id="btn-prop-cancel" class="translated mc-button">DIALOG/EDIT/EDIT-CANCEL-BUTTON</button>
+	</form>
+</div>
+</dialog>
+<!--***********************************************************************-->
+<dialog id="dialog-world-setting">
+<div>
+	<form method="dialog">
+	<div class="dialog-header translated">DIALOG/EDIT/TITLE</div>
+	<table class="prop-editor">
+		<thead>
+			<tr><th>name</th><th>value</th></tr>
+		</thead>
+		<tbody class="input-frame">
+		</tbody>
+	</table>
+	<button id="btn-world-setting-save" class="translated mc-button">DIALOG/EDIT/EDIT-SAVE-BUTTON</button>
+	<button id="btn-world-setting-cancel" class="translated mc-button">DIALOG/EDIT/EDIT-CANCEL-BUTTON</button>
+	</form>
+</div>
+</dialog>
+<!--***********************************************************************-->
+<dialog id="dialog-program-build">
+<div>
+	<form method="dialog">
+	<div class="dialog-header translated">DIALOG/PROGRAM/TITLE</div>
+	<div class="input-element">
+		<div class="translated input-label">DIALOG/PROGRAM/ELEMENT-PROGRAM</div>
+		<div>
+		<select id="dialog-program-add-type" name="type">
+			<option value="vanilla">vanilla</option>
+			<option value="spigot" selected>spigot</option>
+		</select>
+		</div>
+	</div>
+	<div class="input-element type-vanilla" style="display: none">
+		<div class="input-label"><label><a target="_blank" href="https://www.minecraft.net/download/server">minecraft official</a></label><label class="translated">DIALOG/PROGRAM/VANILLA-NOTICE</label></div>
+		<div><input type="text" name="url" /></div>
+	</div>
+	<div class="input-element type-spigot" style="display: block">
+		<div class="input-label"><label><a target="_blank" href="https://www.spigotmc.org/">spigot official</a></label></div>
+		<div class="translated input-label">DIALOG/PROGRAM/ELEMENT-VERSION</div>
+		<div><input type="text" name="version" /></div>
+	</div>
+	<button id="btn-program-update" class="translated mc-button">DIALOG/PROGRAM/UPDATE-BTN</button>
+	<button id="btn-program-cancel" class="translated mc-button">DIALOG/PROGRAM/CANCEL-BTN</button>
+	</form>
+</div>
+</dialog>
+<!--***********************************************************************-->
+<dialog id="dialog-backup">
+<div>
+	<form method="dialog">
+	<div class="dialog-message translated">DIALOG/BACKUP/TITLE</div>
+	<div class="input-element">
+		<div class="translated input-label">DIALOG/BACKUP/INPUT-TITLE</div>
+		<div><input type="text" name="title" /></div>
+	</div>
+	<button id="btn-dialog-backup-yes" class="mc-button translated">DIALOG/BACKUP/BTN-YES</button>
+	<button class="mc-button translated">DIALOG/BACKUP/BTN-NO</button>
+	</form>
+</div>
+</dialog>
+<!--***********************************************************************-->
+<dialog id="dialog-backup-restore">
+<div>
+	<form method="dialog">
+	<div class="dialog-message translated">DIALOG/BACKUP-RESTORE/TITLE</div>
+	<div class="input-element">
+		<div class="translated input-label">DIALOG/BACKUP-RESTORE/WORLDID</div>
+		<div><input type="text" name="id" /></div>
+	</div>
+	<button id="btn-dialog-restore-yes" class="mc-button translated">DIALOG/BACKUP-RESTORE/BTN-YES</button>
+	<button class="mc-button translated">DIALOG/BACKUP-RESTORE/BTN-NO</button>
+	</form>
+</div>
+</dialog>
+<!--***********************************************************************-->
+<dialog id="dialog-backup-upload">
+<div>
+	<form method="dialog">
+	<div class="input-element">
+		<div class="translated input-label">DIALOG/BACKUP-UPLOAD/TITLE</div>
+		<div><input type="text" name="title" /></div>
+	</div>
+	<div class="input-element">
+		<div class="translated input-label">DIALOG/BACKUP-UPLOAD/RESFOREFILE</div>
+		<div><input type="file" name="restore-file" value="" /></div>
+	</div>
+	<button id="btn-backup-upload" class="button-play translated">DIALOG/BACKUP-UPLOAD/BTN-UPLOAD</button>
+	<button class="translated" value="cancel">DIALOG/BACKUP-UPLOAD/BTN-CANCEL</button>
+	</form>
+</div>
+</dialog>
+<!--***********************************************************************-->
+<dialog id="dialog-loading">
+<div>
+	<div class="dialog-header translated">DIALOG/LOADING/TITLE</div>
+	<div class="loader">Loading...</div>
+</div>
+</dialog>
+
+<!-- translate -->
+<script language="javascript" type="text/javascript">  
+const	translates	= [];
+
+
+document.querySelectorAll('.arrow').forEach((e) =>{
+	e	= e.parentNode;
+	e.addEventListener('click', () =>
+	{
+		const	arrow	= e;
+		const	box		= e.parentNode.parentNode;
+		if (arrow.classList.contains('arrow-open'))
+		{
+			arrow.classList.remove('arrow-open');
+			arrow.classList.add('arrow-close');
+			box.querySelector(".toggle-contents").style.display = "none";
+		}
+		else
+		{
+			arrow.classList.remove('arrow-close');
+			arrow.classList.add('arrow-open');
+			box.querySelector(".toggle-contents").style.display = "block";
+		}
+	});
+});
+
+document.querySelectorAll('.arrow-destroy').forEach((e) =>{
+	e	= e.parentNode;
+	e.addEventListener('click', () =>
+	{
+		const	arrow	= e;
+		const	box		= e.parentNode.parentNode.parentNode;
+		box.style.display	= 'none';
+	});
+});
+
+
+</script>
+<script src="./translate.de.js"></script>
+<script src="./translate.en-US.js"></script>
+<script src="./translate.fr.js"></script>
+<script src="./translate.hi.js"></script>
+<script src="./translate.ja.js"></script>
+<script src="./translate.zh-CN.js"></script>
+<script src="./translate.zh-TW.js"></script>
+
+<!-- sub programs -->
+<script src="./js-login.js"></script>
+<script src="./js-program.js"></script>
+<script src="./js-talk.js"></script>
+<script src="./js-translate.js"></script>
+<script src="./js-world.js"></script>
+<script src="./js-backups.js"></script>
+<script src="./js-console.js"></script>
+<script language="javascript" type="text/javascript">  
+document.getElementById('dialog-login').showModal();
+
+var	yesno_dialog_callback;
+
+document.getElementById('btn-yesno-yes').addEventListener('click', () =>
+{
+	yesno_dialog_callback();
+});
+
+function yes_no(msg, yes, no, yes_callback)
+{
+	const	dlg	= document.getElementById('dialog-yesno');
+	dlg.querySelector('.dialog-message').innerHTML	= translate[msg] ? translate[msg] : msg;
+	dlg.querySelector('#btn-yesno-yes').innerHTML	= translate[yes] ? translate[yes] : yes;
+	dlg.querySelector('#btn-yesno-no').innerHTML	= translate[no]  ? translate[no]  : no;
+	yesno_dialog_callback	= yes_callback;
+	dlg.showModal();
+}
+
+</script>
+</body>
+</html>

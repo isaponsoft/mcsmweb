@@ -1,0 +1,87 @@
+translates['en-US']	= {
+	"Language"								: "English(US)",
+
+	"MENU/WORLD-CREATE"						: "Create world",
+	"MENU/PROGRAM-UPDATE"					: "Build program",
+	"MENU/BACKUP-UPLOAD"					: "Upload",
+
+	'BACKUP/STATE/ARCHIVING'				: 'Processing',
+	'BACKUP/STATE/ERROR'					: 'Error',
+	'BACKUP/STATE/OK'						: 'OK',
+	'BACKUP/MENU/RESTORE'					: 'Restore',
+	'BACKUP/MENU/DOWNLOAD'					: 'Download',
+	'BACKUP/MENU/DELETE'					: 'Delete',
+	'BackUP/DELETE/TITLE'					: 'Delete backup?',
+	'BackUP/DELETE/YES'						: 'Yes',
+	'BackUP/DELETE/NO'						: 'No',
+
+	"DIALOG/LOGIN/USERNAME"					: "Login username",
+	"DIALOG/LOGIN/PASSWORD"					: "Login password",
+	"DIALOG/LOGIN/TITLE"					: "Login",
+	"DIALOG/LOGIN/MESSAGE"					: "Please input user and password.",
+	"DIALOG/LOGIN/LOGIN-BUTTON"				: "Login",
+	"DIALOG/LOADING/TITLE"					: "Connecting",
+
+	"DIALOG/WORLD-CREATE/WORLDID"			: "World title",
+	"DIALOG/WORLD-CREATE/DESC"				: "World description",
+	"DIALOG/WORLD-CREATE/PORT"				: "Server port (1080 - 65535)",
+	"DIALOG/WORLD-CREATE/SEED"				: "World seed(blank or 0-9 numerics)",
+	"DIALOG/WORLD-CREATE/PROGRAMTYPE"		: "Use server program",
+	"DIALOG/WORLD-CREATE/PROGRAMVER"		: "If not version fixed then input version",
+	"DIALOG/WORLD-CREATE/RESFOREFILE"		: "If restore from backup.",
+	"DIALOG/WORLD-CREATE/BTN-CREATE"		: "Create",
+	"DIALOG/WORLD-CREATE/BTN-CANCEL"		: "Cancel",
+
+	"DIALOG/WORLDSTATUS/RUN-BUTTON"			: "Run",
+	"DIALOG/WORLDSTATUS/SETTING-BUTTON"		: "Setting",
+	"DIALOG/WORLDSTATUS/PROPERTIE-BUTTON"	: "Properties",
+	"DIALOG/WORLDSTATUS/STOP-BUTTON"		: "Stop",
+	"DIALOG/WORLDSTATUS/EULA-BUTTON"		: "Check EULA",
+	"DIALOG/WORLDSTATUS/EULA-BUTTON2"		: "Agreement EULA",
+	"DIALOG/WORLDSTATUS/BACKUP-BUTTON"		: "Backup",
+	"DIALOG/WORLDSTATUS/DELETE-BUTTON"		: "Delete",
+
+	"DIALOG/EDIT/TITLE"						: "Edit",
+	"DIALOG/EDIT/EDIT-SAVE-BUTTON"			: "Save",
+	"DIALOG/EDIT/EDIT-CANCEL-BUTTON"		: "Cancel",
+	"DIALOG/PROGRAM/TITLE"					: "Add program",
+	"DIALOG/PROGRAM/ELEMENT-PROGRAM"		: "Type (spigot, vanilla)",
+	"DIALOG/PROGRAM/ELEMENT-VERSION"		: "Version (1.19.2 etc)",
+	"DIALOG/PROGRAM/VANILLA-NOTICE"			: "URL of minecraft_server-X,Y.Z.jar",
+	"DIALOG/PROGRAM/UPDATE-BTN"				: "Add",
+	"DIALOG/PROGRAM/CANCEL-BTN"				: "Cancel",
+	"DIALOG/PROGRAMSTATUS/DELETE-BUTTON"	: "Remove",
+
+	'DIALOG/BACKUP-RESTORE/TITLE'			: 'Restore',
+	'DIALOG/BACKUP-RESTORE/WORLDID'			: 'World title',
+	'DIALOG/BACKUP-RESTORE/BTN-YES'			: 'Restore',
+	'DIALOG/BACKUP-RESTORE/BTN-NO'			: 'Cancel',
+
+	"DIALOG/BACKUP-UPLOAD/TITLE"			: "Backup title",
+	"DIALOG/BACKUP-UPLOAD/RESFOREFILE"		: "Backup file",
+	"DIALOG/BACKUP-UPLOAD/BTN-UPLOAD"		: "Upload",
+	"DIALOG/BACKUP-UPLOAD/BTN-CANCEL"		: "Cancel",
+
+	"TEMP/SETTING/EDITOR/MESSAGE"			: "Default",
+
+	"DIALOG/BACKUP/TITLE"					: "Backup create",
+	"DIALOG/BACKUP/INPUT-TITLE"				: "Title",
+	"DIALOG/BACKUP/BTN-YES"					: "Make",
+	"DIALOG/BACKUP/BTN-NO"					: "Cancel",
+
+	"WORLD/DELETE/CONFIRM-MSG"				: "World delete?",
+	"WORLD/DELETE/CONFIRM-YES"				: "YES",
+	"WORLD/DELETE/CONFIRM-NO"				: "NO",
+
+	"PROGRAM/DELETE/CONFIRM-MSG"			: "Program delete?",
+	"PROGRAM/DELETE/CONFIRM-YES"			: "YES",
+	"PROGRAM/DELETE/CONFIRM-NO"				: "NO",
+
+	"WORLD/STATUS/stop"						: "stop",
+	"WORLD/STATUS/active"					: "running",
+	"WORLD/STATUS/activating"				: "initializing",
+	"WORLD/STATUS/stopping"					: "stoppping",
+
+	"BACKUP/STATUS/DOWNLOAD-BUTTON"			: "Download",
+	"BACKUP/STATUS/DELETE-BUTTON"			: "Delete",
+};

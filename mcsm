@@ -1,0 +1,4 @@
+#!/bin/sh
+bin=$(readlink -fn $(realpath $0))
+thispath=$(dirname $bin)
+node ${thispath}/dist/mcsm.js $*

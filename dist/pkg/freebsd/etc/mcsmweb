@@ -1,0 +1,62 @@
+#!/bin/sh
+
+# PROVIDE: mcsmweb
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable mcsmweb:
+# mcsmweb_enable="YES"
+#
+
+. /etc/rc.subr
+
+name="mcsmweb"
+rcvar=mcsmweb_enable
+
+extra_commands="restart upgrade help"
+
+start_cmd="do_start"
+stop_cmd="do_stop"
+restart_cmd="do_restart"
+upgrade_cmd="do_upgrade"
+help_cmd="do_help"
+
+load_rc_config "$name"
+
+: ${mcsmweb_enable="NO"}
+: ${mcsmweb_root="/var/games/minecraft/mcsmweb"}
+: ${mcsmweb_config="/var/games/minecraft/mcsm.ini"}
+: ${mcsmweb_user=www}
+: ${mcsmweb_group=www}
+
+PATH=$PATH:/usr/local/bin
+export PATH
+
+_su="su -m ${mcsmweb_user} -c"
+_command="${mcsmweb_root}/mcsm --config ${mcsmweb_config}"
+_command_upgrade="${mcsmweb_root}/upgrade"
+
+
+do_start () {
+        $_su "$_command start"
+}
+
+do_stop () {
+        $_su "$_command stop"
+}
+
+do_restart () {
+        $_su "$_command restart"
+}
+
+do_upgrade () {
+        $_su "$_command_upgrade"
+}
+
+do_help () {
+        $_su "$_command help"
+}
+
+
+run_rc_command "$1"
